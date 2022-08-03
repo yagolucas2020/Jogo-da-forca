@@ -1,3 +1,4 @@
+let tentativas = 6;
 let listaDinamica = [];
 let palavraSecretaCategoria;
 let palavraSecretaSorteada;
@@ -434,11 +435,27 @@ function montarPalavraNaTela() {
 
     for (i = 0; i < palavraSecretaSorteada.length; i++) {
         if (listaDinamica[i] == undefined) {
-            listaDinamica(i) = "&nbsp;"
-            palavraTela.innerHTML = palavraTela.innerHTML + "<div class='letras'>" + listaDinamica[i] + "</div>"
+            listaDinamica[i] = "&nbsp;"
+            palavraTela.innerHTML = palavraTela.innerHTML + "<div class='letras'>" + listaDinamica[i] + "</div>";
         } else {
-            palavraTela.innerHTML = palavraTela.innerHTML + "<div class='letras'>" + listaDinamica[i] + "</div>"
+            palavraTela.innerHTML = palavraTela.innerHTML + "<div class='letras'>" + listaDinamica[i] + "</div>";
         }
     }
 
+}
+
+
+
+function verificaLetraEscolhida(letra) {
+    if (tentativas > 0) {
+        mudarStyleLetra("tecla-" + letra);
+    }
+
+
+
+}
+
+function mudarStyleLetra(tecla) {
+    document.getElementById(tecla).style.background = "#c71585";
+    document.getElementById(tecla).style.color = "#ffffff";
 }
