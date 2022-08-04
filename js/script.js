@@ -447,6 +447,7 @@ function montarPalavraNaTela() {
 
 
 function verificaLetraEscolhida(letra) {
+    document.getElementById("tecla-" + letra).disabled = true;
     if (tentativas > 0) {
         mudarStyleLetra("tecla-" + letra);
         comparaListas(letra);
